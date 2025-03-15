@@ -165,3 +165,62 @@ print(titleize("on the road"))
 print(titleize("master & margarita"))
 print(titleize(""))
 print(titleize("b"))
+
+
+def hangman(secret, guess):
+    try:
+        result = ""
+
+        for char in secret:
+            if char in guess:
+                result += char
+            else:
+                result += "_"
+        return result
+    
+    except Exception as e:
+        return f"An error accured: {str(e)}"
+    
+print(hangman("alphabet", "ab"))   
+print(hangman("programming", "pg")) 
+print(hangman("python", "xyz"))       
+print(hangman("hello", "ello")) 
+print(hangman("hello", "")) 
+print(hangman("", "xyz")) 
+
+
+def pig_latin(sentence):
+    vowels = {"a", "e", "i", "o", "u"}
+    result = []
+
+    try:
+        words = sentence.lower().split()
+
+        for word in words:
+            if word[0] in vowels:
+                result.append(word+"ay")
+            elif word.startswith("qu"):
+                result.append(word[2:]+"quay")
+            elif word[1:3] == "qu":
+                result.append(word[3:] + word[:3] + "ay")
+            else:
+                for i, char in enumerate(word):
+                    if char in vowels:
+                        result.append(word[i:]+word[:i]+"ay")
+                        break
+                else:
+                    result.append(word+"ay")
+
+        return " ".join(result)
+    
+    except Exception as e:
+        return f"An error occured: {str(e)}"
+    
+print(pig_latin("hello world"))
+print(pig_latin("apple pie"))
+print(pig_latin("time is money") )
+print(pig_latin("Python is fun"))
+print(pig_latin(""))    
+
+
+
