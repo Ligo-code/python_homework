@@ -9,9 +9,9 @@ def greet(name):
 
 print(greet("Niya"))
 
-def calc(num1, num2, operation="multiply"):
+'''def calc(num1, num2, operation="multiply"):
     try:
-                # Проверка, что num1 и num2 — это числа
+                # check num1, num2 - numbers
         if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
             return "You can't multiply those values!"
         
@@ -37,14 +37,53 @@ def calc(num1, num2, operation="multiply"):
         return "You can't multiply those values!"
     
 print(calc(10,5,'add')) # 15
-print(calc(10,5,'substract')) # 5
-print(calc(5,6,'mltiply')) # 50
+print(calc(10,5,'subtract')) # 5
+print(calc(5,6,'multiply')) # 50
 print(calc(10,5,'divide')) # 2
 print(calc(10,5,'modulo')) # 0
 print(calc(10,5,'int_divide')) # 2
-print(calc(10,5,'exponent')) # 100000
+print(calc(10,5,'power')) # 100000
 print(calc(10, 0, "divide"))    # You can't divide by 0!
-print(calc("a", 5, "multiply")) # You can't multiply those values!
+print(calc("a", 5, "multiply")) # You can't multiply those values!'''
+
+def calc(num1, num2, operation="multiply"):
+    try:
+        # check num1, num2 - numbers
+        if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+            return "You can't multiply those values!"
+
+        match operation:
+            case "add":
+                return num1 + num2
+            case "subtract":
+                return num1 - num2
+            case "multiply":
+                return num1 * num2
+            case "divide":
+                return num1 / num2
+            case "modulo":
+                return num1 % num2
+            case "int_divide":
+                return num1 // num2
+            case "power":
+                return num1 ** num2
+            case _:
+                return "Invalid operation!"
+    except ZeroDivisionError:
+        return "You can't divide by 0!"
+    except (TypeError, ValueError):
+        return "You can't multiply those values!"
+
+# Tests
+print(calc(10, 5, 'add'))        # 15
+print(calc(10, 5, 'subtract'))   # 5
+print(calc(5, 6, 'multiply'))    # 30
+print(calc(10, 5, 'divide'))     # 2.0
+print(calc(10, 5, 'modulo'))     # 0
+print(calc(10, 5, 'int_divide')) # 2
+print(calc(10, 5, 'power'))      # 100000
+print(calc(10, 0, 'divide'))     # You can't divide by 0!
+print(calc("a", 5, 'multiply'))  # You can't multiply those values!
     
 
 def data_type_conversion(value, data_type):
@@ -98,7 +137,7 @@ print(grade(50,51))
 print(grade("b",98))
 print(grade())
 
-def repeat(string, count):
+'''def repeat(string, count):
     try:
         if not isinstance(count, int) or count < 0:
             return "Invalid count value."
@@ -113,7 +152,35 @@ print(repeat("a", 5))
 print(repeat("fizz",2))
 print(repeat("buzz","3"))
 print(repeat("abc", 0))
-print(repeat("boo", -1))
+print(repeat("boo", -1))'''
+
+def repeat(string, count):
+    try:
+        if not isinstance(string, str):
+            return "Invalid string value."
+        
+        if isinstance(count, str)and count.isdigit():
+            count = int(count)
+
+        if not isinstance(count, int) or count < 0:
+            return "Invalid count value."
+
+        match count:
+            case 0:
+                return ""
+            case 1:
+                return string
+            case _:
+                return string * count
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
+
+# Примеры
+print(repeat("a", 5))        # aaaaa
+print(repeat("fizz", 2))     # fizzfizz
+print(repeat("buzz", "3"))   # Invalid count value.
+print(repeat("abc", 0))      # (пустая строка)
+print(repeat("boo", -1))     # Invalid count value.
 
 
 def student_scores(option, **kwargs):
