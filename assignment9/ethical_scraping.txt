@@ -1,0 +1,95 @@
+#Task 1
+Checked robots.txt at https://durhamcounty.bibliocommons.com/robots.txt.
+
+The file contains:
+
+User-agent: *
+Disallow: /
+
+This means that all bots are disallowed from accessing the site.
+
+Therefore, it is not ethical to scrape the Durham County Library pages.
+
+1. Which sections of the website are restricted for crawling?
+
+All sections of the website are restricted. The robots.txt file contains the following rule:
+
+User-agent: *
+Disallow: /
+
+This means no part of the site is allowed to be crawled.
+
+---
+
+2. Are there specific rules for certain user agents?
+
+Yes, there are specific rules for certain user agents. 
+In addition to the general rule for all agents, the file includes:
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+---
+
+3. Reflect on why websites use robots.txt and write 2-3 sentences explaining its purpose 
+and how it promotes ethical scraping.
+
+Websites use robots.txt to control which parts of the site can be accessed by automated bots. 
+This helps prevent server overload and protects sensitive or unfinished content from being indexed or scraped. 
+Respecting robots.txt promotes ethical scraping by ensuring that scraping activities 
+do not harm the website’s performance or violate the site owner’s policies.
+
+# Task 5
+Checked robots.txt at https://en.wikipedia.org/robots.txt.
+
+---
+
+1. Which sections of the website are restricted for crawling?
+
+Many specific sections are restricted. The robots.txt file contains multiple Disallow rules, such as:
+
+Disallow: /w/
+Disallow: /api/
+Disallow: /trap/
+Disallow: /wiki/Special:
+Disallow: /wiki/Wikipedia:Articles_for_deletion
+Disallow: /wiki/Wikipedia:Requests_for_arbitration
+Disallow: /wiki/Wikipedia:Copyright_problems
+... 
+and many others for administrative and sensitive pages across different language editions.
+
+This means that while general article pages are allowed, many administrative and user-related sections 
+are blocked from crawling.
+
+---
+
+2. Are there specific rules for certain user agents?
+
+Yes, there are specific rules for various user agents. For example:
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Mediapartners-Google*
+Disallow: /
+
+User-agent: UbiCrawler
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+... and many other user agents are explicitly blocked.
+
+---
+
+3. Reflect on why websites use robots.txt and write 2-3 sentences explaining its purpose 
+and how it promotes ethical scraping.
+
+Websites use robots.txt to control which parts of their content can be accessed by automated bots. 
+This helps protect sensitive information, reduces server load, and prevents misuse of website resources. 
+Following the rules set in robots.txt ensures that scraping activities remain respectful, responsible, 
+and aligned with the site's policies.
