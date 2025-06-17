@@ -1,0 +1,21 @@
+Challenges faced:
+
+Task 1 (robots.txt analysis):
+No issues here. The robots.txt structure was clear and easy to understand.
+
+Task 3-4 (Durham County Library scraping):
+I ran into a small problem with webdriver-manager - the ChromeDriver version didn’t match my current 
+Chrome version. After doing some research, I switched to Selenium Manager, 
+and everything worked smoothly after that.
+
+Task 5 (Wikipedia robots.txt analysis):
+The Wikipedia robots.txt file was very large and detailed, but the structure was clear, 
+so it wasn’t difficult to analyze.
+
+Task 6 (OWASP Top 10 scraping):
+No significant challenges were encountered.
+The Top 10 items were well-structured and easy to extract using href filters and CSS selectors.
+
+Overall, this assignment was a great practice - both for the technical side of web scraping 
+and for thinking through the ethical aspects.
+
