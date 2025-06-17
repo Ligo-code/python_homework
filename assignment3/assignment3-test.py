@@ -34,7 +34,7 @@ test2_json_df = pd.DataFrame({ 'Name': ['Eve', 'Frank'],
                                 'Salary': [60000, 95000]})
 
 def test_read_data_frame_from_json():
-    assert os.access("./additional_employees.json", os.F_OK) == True
+    assert os.access("assignment3/additional_employees.json", os.F_OK) == True
     assert a3.json_employees.equals(test2_json_df)
 
 def test_concat_json_employees():
